@@ -1,0 +1,36 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int n, m, i, j, max, p, t;
+    cin>>n>>m;
+    int a[n][m];
+    max=-1;
+    setlocale(LC_ALL," ");
+    for (i=1; i<n+1; i++)
+    {
+        for (j=1; j<m+1; j++)
+        {
+            cout<<"a["<<i<<"]["<<j<<"]=";
+            cin>>a[i][j];
+        }
+    }
+    for (j=1; j<m+1; j++)
+    {
+        p=1;
+        for (i=1; i<n+1; i++)
+        {
+            p*=a[i][j];
+            if (p>max)
+            {
+                max=p;
+                t=j;
+            }
+        }
+    }
+    cout<<max<<endl<<t;
+   
+    return 0;
+}
